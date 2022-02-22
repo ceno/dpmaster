@@ -1,18 +1,37 @@
+# Dpmaster, an open master server
 
-                         Dpmaster, an open master server
-                         -------------------------------
+This fork provides binaries of dpmaster version 2.2 for Amazon Linux 2 - the official distro for AWS EC2.
 
-                               General information
-                               -------------------
+If you'd like to compile your own from scratch, the instructions for the AMI "Amazon Linux 2 minimal HVM" are as follows
 
+```
+sudo yum install -y git make gcc
+git clone https://github.com/kphillisjr/dpmaster.git
+cd dpmaster
+sudo make UNIX_EXE=/usr/local/bin/dpmaster release
+```
 
-1) INTRODUCTION
-2) COMMAND LINE SYNTAX
-3) BASIC USAGE
-4) CONTACTS & LINKS
+After which dpmaster will be available in the PATH
+```
+[ec2-user@ip-xxx-xx-xx-xx src]$ dpmaster 
 
+dpmaster, an open master server
+(version: 2.2, compiled: Feb 22 2022 at 10:40:50)
 
-1) INTRODUCTION:
+* 2022-02-22 10:41:02 UTC
+> Listening on all IPv4 addresses
+```
+
+The original readme continues below.
+
+## General information
+
+- [Introduction](#introduction)
+- [Command Line Syntax](#command-line-syntax)
+- [Basic Usage](#basic-usage)
+- [Contacts & Links](#contacts---links)
+
+### Introduction
 
 Dpmaster is a lightweight master server written from scratch for DarkPlaces,
 LordHavoc's game engine. It is an open master server because of its free source
@@ -51,7 +70,7 @@ The source code of dpmaster is available under the GNU General Public License,
 version 2. The complete text of this license is in the file "doc/license.txt".
 
 
-2) COMMAND LINE SYNTAX:
+### Command Line Syntax
 
 The syntax of the command line is the classic: "dpmaster [options]". Running
 "dpmaster -h" will print the available options for your version. Be aware that
@@ -75,8 +94,7 @@ of servers of 16 are equivalent:
    * dpmaster --max-servers 16
    * dpmaster --max-servers=16
 
-
-3) BASIC USAGE:
+### Basic Usage
 
 For most users, simply running dpmaster, without any particular parameter,
 should work perfectly. Being an open master server, it does not require any
@@ -100,8 +118,7 @@ section in "doc/manual.txt").
 More options and their descriptions can be found in "doc/manual.txt", so feel
 free to read this file if you have specific needs.
 
-
-4) CONTACTS & LINKS:
+### Contacts & Links
 
 You can get the latest versions of DarkPlaces and dpmaster on the DarkPlaces
 home page <http://icculus.org/twilight/darkplaces/>.
